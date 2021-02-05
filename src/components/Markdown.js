@@ -6,14 +6,14 @@ import { CgSoftwareDownload as SaveIcon } from "react-icons/cg";
 import { MdContentCopy as CopyIcon } from "react-icons/md";
 import { MdDelete as CleanIcon } from "react-icons/md";
 import { Tooltip } from "@material-ui/core";
-
+import "../styles/style.css"
 function MarkdownEdit({ content, changeContent }) {
   const [open, setOpen] = useState(false);
   const editorRef = useRef(null);
 
   useEffect(() => {
     if (content === "") {
-      localStorage.setItem("markdown", "placeholder");
+      localStorage.setItem("markdown", placeholder);
     } else {
       localStorage.setItem("markdown", content);
     }
@@ -49,7 +49,7 @@ function MarkdownEdit({ content, changeContent }) {
   };
 
   return (
-    <div className="markdown-edit scroll">
+    <div style={{height:"100%"}} className="markdown-edit scroll">
       <div className="section-title">
         <h3>Markdown</h3>
         <div className="right-section">
@@ -71,6 +71,7 @@ function MarkdownEdit({ content, changeContent }) {
         </div>
       </div>
       <textarea
+      style={{width:"98%", height:"86%", border:"none",}}
         className="editable"
         value={content}
         onChange={handleEditorChange}

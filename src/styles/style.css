@@ -1,0 +1,6 @@
+.editable:hover{
+  border: none;
+}
+.editable:focus{
+    outline: none;
+}

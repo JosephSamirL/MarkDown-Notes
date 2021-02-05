@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Split from "react-split";
+import { Fade } from "react-awesome-reveal";
 import MarkdownEdit from "./Markdown";
 import MarkdownPreview from "./Html";
 import placeholder from "../data/placeholder";
@@ -18,18 +18,13 @@ function WorkArea() {
   }, []);
 
   return (
-    <div className="work-area">
-      <Split
-        className="wrapper-card"
-        sizes={[50, 50]}
-        minSize={orientation === "horizontal" ? 300 : 100}
-        expandToMin={true}
-        gutterAlign="center"
-        direction={orientation}
-      >
-        <MarkdownEdit content={markDown} changeContent={setMarkDown} />
-        <MarkdownPreview content={markDown} />
-      </Split>
+    <div style={{display:"flex", justifyContent:"space-between",  height:"100%", backgroundColor:"gray",  width:"100%", }} className="work-area">
+        <div style={{width:"46%",backgroundColor:"white", textAlign:"center", height:"95%",margin:"5px"}}>
+        <MarkdownEdit style={{height:"100%"}} content={markDown} changeContent={setMarkDown} />
+        </div>
+        <div  style={{width:"46%",backgroundColor:"white", height:"95%" ,textAlign:"center", overflow:"scroll", margin:"5px"}}>
+        <MarkdownPreview style={{height:"100%"}} content={markDown} />
+        </div>
     </div>
   );
 }

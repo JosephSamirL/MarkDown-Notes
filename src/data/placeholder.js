@@ -1,5 +1,5 @@
 const placeholder=`# Hello 👋
-markItDown is a markdown editor ✍ designed by [Aromal Anil](https://github.com/aromalanil)
+
 ## 🤷‍♂️ What can you write here
 1. Code
   * eg: \`<div></div>\` or
